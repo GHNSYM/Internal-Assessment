@@ -15,6 +15,7 @@
         $regno=$row['regno'];  
         $dob=$row['dob'];  
         $sem=$row['current_sem'];  
+        $course=$row['course'];
         $batch=$row['batch'];  
         $contact=$row['contact'];
       }
@@ -37,7 +38,7 @@
                     <input type="text" name="name" value="<?php echo $name;?>" class="input-responsive " required>
 
                     <div class="student-label">Roll Number:</div>
-                    <input type="text" name="roll" value="<?php echo $name;?>" class="input-responsive" required>
+                    <input type="text" name="roll" value="<?php echo $roll;?>" class="input-responsive" required>
 
                     <div class="student-label">Reg. No.:</div>
                     <input type="text" name="regno" value="<?php echo $regno;?>" class="input-responsive" required>
@@ -47,16 +48,22 @@
 
                     <div class="student-label">Semester:</div>
                     <select class="form-dropdown" name="semester">
-                        <option value="1st">1st Semester</option>
-                        <option value="2nd">2nd Semester</option>
-                        <option value="3rd">3rd Semester</option>
-                        <option value="4th">4th Semester</option>
-                        <option value="5th">5th Semester</option>
-                        <option value="6th">6th Semester</option>
-                        <option value="passed out">Passed Out</option>
+                        <option value="1st" <?php if($sem=="1st") echo "selected";?>>1st Semester</option>
+                        <option value="2nd" <?php if($sem=="2nd") echo "selected";?>>2nd Semester</option>
+                        <option value="3rd" <?php if($sem=="3rd") echo "selected";?>>3rd Semester</option>
+                        <option value="4th" <?php if($sem=="4th") echo "selected";?>>4th Semester</option>
+                        <option value="5th" <?php if($sem=="5th") echo "selected";?>>5th Semester</option>
+                        <option value="6th" <?php if($sem=="6th") echo "selected";?>>6th Semester</option>
+                        <option value="passed out" <?php if($sem=="passed out") echo "selected";?>>Passed Out</option>
                     </select>
         
-                    <div class="student-label">Batch:</div>
+                    <div class="student-label">Course:</div>
+                    <select class="form-dropdown" name="course" >
+                        <option value="BCA" <?php if($course=="BCA") echo "selected";?>>BCA</option>
+                        <option value="BSc.IT" <?php if($course=="BSc.IT") echo "selected";?>>BSc.IT</option>
+                    </select>
+
+                    <div class="student-label">Batch</div>
                     <input type="text" name="batch" value="<?php echo $batch;?>" class="input-responsive" required>
 
                     <div class="student-label">Contact:</div>
@@ -83,6 +90,7 @@
         $regno=$_POST['regno'];
         $dob=$_POST['dob'];
         $sem=$_POST['semester'];
+        $course=$_POST['course'];
         $batch=$_POST['batch'];
         $contact=$_POST['contact'];
 
@@ -92,6 +100,7 @@
         regno='$regno',
         dob='$dob',
         current_sem='$sem',
+        course='$course',
         batch='$batch',
         contact='$contact'
         WHERE roll_no='$roll'";
