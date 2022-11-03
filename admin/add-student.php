@@ -25,16 +25,21 @@
                     <input type="date" name="dob"  class="input-responsive" required>
 
                     <div class="student-label">Semester:</div>
-                    <select class="form-dropdown" name="semester" id="">
+                    <select class="form-dropdown" name="semester" >
                         <option value="1st">1st Semester</option>
                         <option value="2nd">2nd Semester</option>
                         <option value="3rd">3rd Semester</option>
                         <option value="4th">4th Semester</option>
                         <option value="5th">5th Semester</option>
                         <option value="6th">6th Semester</option>
-                        <option value="passed out">Passed Out</option>
+                        <option value="pass out">Pass Out</option>
                     </select>
         
+                    <div class="student-label">Course:</div>
+                    <select class="form-dropdown" name="course" >
+                        <option value="BCA">BCA</option>
+                        <option value="BSc.IT">BSc.IT</option>
+                    </select>
                     <div class="student-label">Batch:</div>
                     <input type="text" name="batch" placeholder="20XX-XX" class="input-responsive" required>
 
