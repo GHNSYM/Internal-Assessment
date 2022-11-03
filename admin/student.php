@@ -53,7 +53,7 @@
         <div class="col">
             <div class="roll-search text-center">
                 <div class="container2">
-                    <form action="roll-search.html" method="POST">
+                    <form action="roll-search.php" method="POST">
                     <input type="search"name="search" placeholder="Enter Roll No.."required>
                     <input type="submit" name="submit" value="Search" class="btn btn-primary">
                     </form>
@@ -73,6 +73,7 @@
                 <th>Name</th>
                 <th>DOB</th>
                 <th>Semester</th>
+                <th>Course</th>
                 <th>Batch</th>
                 <th>Contact</th>
                 <th>Action</th>
@@ -95,6 +96,7 @@
                             $regno=$row['regno'];
                             $dob=$row['dob'];
                             $sem=$row['current_sem'];
+                            $course=$row['course'];
                             $batch=$row['batch'];
                             $contact=$row['contact'];
 
@@ -106,6 +108,7 @@
                                 <td><?php echo $name;?></td>
                                 <td><?php echo $dob;?></td>
                                 <td><?php echo $sem;?></td>
+                                <td><?php echo $course;?></td>
                                 <td><?php echo $batch;?></td>
                                 <td><?php echo $contact;?></td>
                                 <td>
@@ -114,7 +117,7 @@
                                     <div class="dropdown-content">
                                         <a href="<?php echo SITEURL."admin/marks.php?roll=$roll"?>">Marks</a>
                                         <a href="<?php echo SITEURL."admin/update-student.php?roll=$roll"?>">Update</a>
-                                        <a href="<?php echo SITEURL."admin/delete-student.php?roll=$roll"?>">Delete</a>
+                                        <a class="dropdel"href="<?php echo SITEURL."admin/delete-student.php?roll=$roll"?>">Delete</a>
                                     </div>
                                 </div>
                                 </td>
