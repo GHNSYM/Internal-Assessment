@@ -1,240 +1,87 @@
-<?php include('partials/admin-navbar.php');?>
+<?php include('partials/admin-navbar.php');
+
+if(isset($_GET['roll']))
+{
+    $roll=$_GET['roll'];
+
+    $sql="SELECT * FROM student WHERE roll_no='$roll'";
+
+    $res=mysqli_query($conn,$sql);
+
+    if($res==TRUE)
+    {
+        $row= mysqli_fetch_assoc($res);
+
+        $name=$row['name']; 
+        $sem=$row['current_sem'];  
+    }
+}
+?>
 <div class="main">
     <div class="marks">
         <h1>Marks</h1>
         <br>
-        <h2>Name: Ghanshyam Sharma</h2>
-        <h2>Roll: UT-201-023-0024</h2>
+        <div class="row">
+            <div class="col font">
+            <h2>Name: <?php echo $name;?></h2>
+            <h2>Roll: <?php echo $roll;?></h2>
+            </div>
+            <div class="col">
+                <a class="btn-primary edit" href="<?php echo SITEURL."admin/marks-edit.php?roll=$roll"?>">EDIT</a>
+            </div>
+        </div>
+        
         <div class="clearfix"></div>
-            <div class="row">
-                <div class="col">
                     <div class="sub-main">
-                        <h2>1st Semester</h2>
+                        <br>
                         <table class="marks-tbl">
                             <tr>
+                                <th>Semester</th>
+                                <th>Paper Code</th>
                                 <th>Subject</th>
                                 <th>Sessional</th>
                                 <th>Assignment</th>
                                 <th>Attendence</th>
+                                <th>Total</th>
                             </tr>
-                            <tr>
-                                <td>English:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>C-Programming:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>Office Automation:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>ICT Hardware:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
+                            <?php
+                                $sql2="SELECT * FROM marks JOIN paper ON marks.paper_code=paper.paper_code WHERE roll_no='$roll' ORDER BY semester ";
+
+                                $res2=mysqli_query($conn,$sql2);
+                            
+                                if($res2==TRUE)
+                                {
+                                    $count=mysqli_num_rows($res2);
+                            
+                                    if($count>0)
+                                    {
+                                        while($row2=mysqli_fetch_assoc($res2))
+                                        {
+                                            $sem=$row2["semester"];
+                                            $code= $row2['paper_code'];
+                                            $sub=$row2['subject'];
+                                            $sess=$row2['sessional'];
+                                            $assi=$row2['assignment'];
+                                            $atten=$row2['attendance'];
+
+                                            ?>
+                                                <tr>             
+                                                    <td><?php echo $sem;?></td>      
+                                                    <td><?php echo $code;?></td>
+                                                    <td><?php echo $sub;?></td>
+                                                    <td><?php echo $sess;?></td>
+                                                    <td><?php echo $assi;?> </td>
+                                                    <td><?php echo $atten;?> </td>
+                                                    <td><?php echo $sess+$assi+$atten;?></td>
+                                                </tr>
+                                            <?php
+                                        }
+                                    }
+                                }
+                            ?>
                         </table>
                     </div>
-                </div>    
-                <div class="col">
-                    <div class="sub-main">
-                        <h2>2nd Semester</h2>
-                        <table class="marks-tbl">
-                            <tr>
-                                <th>Subject</th>
-                                <th>Sessional</th>
-                                <th>Assignment</th>
-                                <th>Attendence</th>
-                            </tr>
-                            <tr>
-                                <td>Mathematics:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>Digital Logic:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>Basic Electronics:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>EVS:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>  
-            <div class="row">
-                <div class="col">
-                    <div class="sub-main">
-                        <h2>3rd Semester</h2>
-                        <table class="marks-tbl">
-                            <tr>
-                                <th>Subject</th>
-                                <th>Sessional</th>
-                                <th>Assignment</th>
-                                <th>Attendence</th>
-                            </tr>
-                            <tr>
-                                <td>DBMS:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>Data Structure:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>Web Technology:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>History:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>    
-                <div class="col">
-                    <div class="sub-main">
-                    <h2> 4th Semester</h2>
-                        <table class="marks-tbl">
-                            <tr>
-                                <th>Subject</th>
-                                <th>Sessional</th>
-                                <th>Assignment</th>
-                                <th>Attendence</th>
-                            </tr>
-                            <tr>
-                                <td>Computer Orgainzation:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>OOPS in C++:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>Mathematics II:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>Mobile Application:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>  
-            <div class="row">
-                <div class="col">
-                    <div class="sub-main">
-                    <h2>5th Semester</h2>
-                        <table class="marks-tbl">
-                            <tr>
-                                <th>Subject</th>
-                                <th>Sessional</th>
-                                <th>Assignment</th>
-                                <th>Attendence</th>
-                            </tr>
-                            <tr>
-                                <td>Operating System:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>Java:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>Python:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>Project:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>    
-                <div class="col">
-                    <div class="sub-main">
-                        <h2>1st Semester</h2>
-                        <table class="marks-tbl">
-                            <tr>
-                                <th></th>
-                                <th>Sessional</th>
-                                <th>Assignment</th>
-                                <th>Attendence</th>
-                            </tr>
-                            <tr>
-                                <td>English:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>C-Programming:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>Office Automation:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                            <tr>
-                                <td>ICT Hardware:</td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                                <td><input type="number"></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>  
-        </div>  
+                </div> 
     </div>
 </div>
 <?php include('partials/footer.php');?>
