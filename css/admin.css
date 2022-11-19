@@ -157,11 +157,17 @@ select:focus {
   border: none;
   border-radius: 24px;
 }
-
+.dropdown2{
+  color:#0f035e;
+  border:none;
+}
 option {
   background-color: #b9daf0;
   border: none;
   /* outline:none; */
+}
+input{
+  border:none;
 }
 ul {
   margin-right: 2%;
@@ -510,12 +516,12 @@ legend {
 }
 
 .marks {
-  margin-left: 4%;
+  margin-left: 8%;
 }
 .marks-tbl {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  table-layout: fixed;
+  table-layout: auto;
   width: 90%;
   margin-bottom: 100px;
 }
@@ -525,8 +531,9 @@ legend {
   border: 1px solid #ddd;
   padding: 8px;
 }
+
 .marks-tbl td input {
-  width: 120px;
+  width: 80px;
 }
 
 .marks-tbl tr {
@@ -548,10 +555,56 @@ legend {
   background-color: #04aa6d;
   color: white;
 }
+
 .edit {
+  margin-left: 70%;
+  width: 90px;
+  height: 40px;
+}
+.edit2 {
   margin-left: 80%;
   width: 90px;
   height: 40px;
+}
+.marks2 {
+  margin-left: 4%;
+}
+.marks-tbl2 {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 90%;
+  margin-bottom: 100px;
+}
+
+.marks-tbl2 td,
+.marks-tbl2 th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.marks-tbl2 td input {
+  width: 120px;
+}
+
+.marks-tbl2 tr {
+  background-color: #ddd;
+  height: min-content;
+}
+.marks-tbl2 tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.marks-tbl2 tr:hover {
+  background-color: #ddd;
+}
+
+.marks-tbl2 th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
 }
 .font {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -563,4 +616,3 @@ legend {
   color: white;
   transition: 0.2s ease-in-out;
 }
-
