@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Merienda&family=Pacifico&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+}
+.main {
+  width: 100%;
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7) 10%,
+      rgba(0, 0, 0, 0.7) 10%
+    ),
+    url(../images/2.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 109vh;
+}
+
+.navbar {
+  width: 100%;
+  height: 75px;
+  margin: left;
+}
+
+.watermark img {
+  float: left;
+  width: 500px;
+  padding-left: 3.5%;
+  padding-top: 0.5%;
+}
+
+.menu {
+  width: 600px;
+  height: 20px;
+  float: right;
+  padding-right: 2%;
+  padding-top: 2.5%;
+}
+
+ul {
+  float: right;
+  justify-content: center;
+  align-items: center;
+}
+li {
+  display: inline;
+}
+
+ul li {
+  list-style: none;
+  margin-left: 82px;
+  margin-top: 27px;
+  font-size: 14px;
+}
+
+ul li a {
+  display: inline;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-family: Arial;
+  font-weight: bold;
+  transition: 0.4s ease-in-out;
+}
+
+ul li a:hover {
+  color: rgb(0, 157, 255);
+}
+
+.content {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  color: rgb(255, 255, 255);
+  position: relative;
+  padding-left: 2%;
+}
+
+.content .par {
+  padding-left: 28px;
+  padding-bottom: 90px;
+  font-family: "Fjalla One";
+  font-size: 22px;
+  letter-spacing: 1.2px;
+  line-height: 40px;
+  color: #7fc1f7;
+  height: 100px;
+}
+.clearfix {
+  float: none;
+  clear: both;
+}
+.content h1 {
+  font-family: "Fjalla One";
+  font-size: 40px;
+  padding-left: 28px;
+  margin-top: 5%;
+  letter-spacing: 2px;
+}
+.cn a {
+  padding-top: 1%;
+  padding-left: 2%;
+}
+
+.content .cn {
+  width: 160px;
+  height: 30px;
+  background: #43a9fc;
+  border: none;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  font-size: 18px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.content .cn a {
+  text-decoration: none;
+  font-family: Roboto;
+  color: rgb(0, 0, 0);
+  transition: 0.3s ease;
+  padding: 1%;
+}
+
+.cn {
+  text-align: center;
+  vertical-align: middle;
+}
+.cn:hover {
+  background-color: #fff;
+}
+
+.content span {
+  color: #43a9fc;
+  font-family: "Fjalla One";
+  font-size: 75px;
+}
+
+.form {
+  width: 250px;
+  height: 380px;
+  background: linear-gradient(
+    to top,
+    rgba(19, 71, 88, 0.8) 50%,
+    rgba(1, 42, 55, 0.8) 50%
+  );
+  position: absolute;
+  top: -20px;
+  left: 870px;
+  transform: translate(0%, -5%);
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.form h2 {
+  width: 220px;
+  font-family: sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  border-radius: 10px;
+  margin: 2px;
+  padding: 8px;
+}
+
+.form input {
+  text-align: center;
+  width: 240px;
+  height: 35px;
+  background: transparent;
+  border-bottom: 1px solid #48a5e8;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: white;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  font-family: sans-serif;
+}
+
+.form input:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: rgb(255, 255, 255);
+  font-family: Arial;
+}
+
+.btnn {
+  width: 240px;
+  height: 40px;
+  background: #30baf1;
+  border: none;
+  margin-top: 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  transition: 0.4s ease;
+}
+
+.btnn:hover {
+  background: rgb(255, 255, 255);
+  color: #0eecfc;
+}
+
+.btnn a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.form .link {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.form .link a {
+  text-decoration: none;
+  color: #0084ff;
+}
+
+.liw {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.icons a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.icons ion-icon {
+  color: #fff;
+  font-size: 30px;
+  padding-left: 110px;
+  padding-top: 5px;
+  transition: 0.3s ease;
+}
+
+.icons ion-icon:hover {
+  color: #2da6f1;
+}
+.footer-bottom {
+  font-family: Georgia;
+  font-size: 25px;
+  font-weight: 20px;
+  color: white;
+  background: #43a9fc;
+  width: 100%;
+  text-align: center;
+  padding: 2%;
+}
+.table {
+  color: white;
+  width: 80%;
+  padding: 50px;
+  text-align: center;
+}
