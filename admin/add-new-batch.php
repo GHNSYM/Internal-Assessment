@@ -3,6 +3,13 @@
 <div class="main">
     <div class="student">
         <h1>Add a new batch.</h1>
+        <?php
+                if(isset($_SESSION['succ']))
+                {
+                    echo $_SESSION['succ'];
+                    unset($_SESSION['succ']);
+                }
+            ?>
 
         <form method="POST" action="" class="add-batch" >
             <fieldset>
@@ -130,11 +137,11 @@
     {
         $count=array_pop($_POST);
         array_pop($_POST);
-        print_r($_POST);
         $num=1;
+        $num2=0;
         while($count>=$num)
         {
-            $roll=$_POST['roll_no'.$num];
+            $roll_no=$_POST['roll_no'.$num];
             $regno=$_POST['regno'.$num];
             $name=$_POST['name'.$num];
             $dob=$_POST['dob'.$num];
@@ -143,12 +150,12 @@
             $contact=$_POST['contact'.$num];
             $sem=$_POST['sem'.$num];
 
-            
-            $sql=" INSERT INTO student VALUES('$roll','$name','$sem','$regno','$dob','$batch','$contact','$course')";
+            $num++;
+
+            $sql=" INSERT INTO student VALUES('$roll_no','$name','$sem','$regno','$dob','$batch','$contact','$course')";
         
             $res=mysqli_query($conn,$sql);
 
-            $num2=0;
             if($res==TRUE)
             {
                 $num2++;
@@ -156,12 +163,12 @@
         }
         if($num2>0)
         {
-            $_SESSION['succ']="<div class='success text-center'> $num2 students added.</div>";
+            $_SESSION['succ']="<div class='success'> $num2 students added.</div>";
             header('location:'.SITEURL.'admin/add-new-batch.php');
         }
         else
         {
-            $_SESSION['succ']="<div class='error text-center'>Failed to add new batch.</div>";
+            $_SESSION['succ']="<div class='error'>Failed to add new batch.</div>";
             header('location:'.SITEURL.'admin/add-new-batch.php');
         }
     }
