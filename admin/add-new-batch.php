@@ -148,7 +148,7 @@
 
             $count--;
 
-            $sql="INSERT INTO student_tbl VALUES('$roll_no','$name','$sem','$regno','$dob','$batch','$contact','$course');";
+            $sql=" INSERT INTO student_tbl VALUES('$roll_no','$name','$sem','$regno','$dob','$batch','$contact','$course');";
 
             print_r($sql);
         }
