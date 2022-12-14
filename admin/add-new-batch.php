@@ -89,10 +89,7 @@
                                                     <td><input type="text"name="course<?php echo $sn;?>"value="<?php echo $course;?>"></td>
                                                     <td><input type="year"name="batch<?php echo $sn;?>"value="<?php echo $batch;?>"></td>
                                                     <td><input type="tel"name="contact<?php echo $sn;?>"placeholder="Contact"></td>
-                                                    <input type="hidden" name="sem"value="<?php echo $sem;?>">
-                                                    <input type="hidden" name="count"value="<?php echo $count;?>">
-
-
+                                                    <input type="hidden" name="sem<?php echo $sn;?>"value="<?php echo $sem;?>">
                                                     <?php $sn++;?>
                                                 </tr>
                                                 <?php
@@ -104,6 +101,7 @@
                                             <td></td>
                                             <td></td>
                                             <td class="center"><input type="submit"name="save"value="SAVE"class="btn-primary input-responsive"></td>
+                                            <input type="hidden" name="count"value="<?php echo $count;?>">
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -130,30 +128,41 @@
 <?php
     if(isset($_POST['save']))
     {
-        print_r($_POST);
         $count=array_pop($_POST);
         array_pop($_POST);
         print_r($_POST);
-
-        while($count>0)
+        $num=1;
+        while($count>=$num)
         {
-            $sem=array_pop($_POST);
-            $contact=array_pop($_POST);
-            $batch=array_pop($_POST);
-            $course=array_pop($_POST);
-            $dob=array_pop($_POST);
-            $regno=array_pop($_POST);
-            $name=array_pop($_POST);
-            $roll_no=array_pop($_POST);
+            $roll=$_POST['roll_no'.$num];
+            $regno=$_POST['regno'.$num];
+            $name=$_POST['name'.$num];
+            $dob=$_POST['dob'.$num];
+            $course=$_POST['course'.$num];
+            $batch=$_POST['batch'.$num];
+            $contact=$_POST['contact'.$num];
+            $sem=$_POST['sem'.$num];
 
-            $count--;
+            
+            $sql=" INSERT INTO student VALUES('$roll','$name','$sem','$regno','$dob','$batch','$contact','$course')";
+        
+            $res=mysqli_query($conn,$sql);
 
-            $sql=" INSERT INTO student_tbl VALUES('$roll_no','$name','$sem','$regno','$dob','$batch','$contact','$course');";
-
-            print_r($sql);
+            $num2=0;
+            if($res==TRUE)
+            {
+                $num2++;
+            }
         }
-
-        
-        
+        if($num2>0)
+        {
+            $_SESSION['succ']="<div class='success text-center'> $num2 students added.</div>";
+            header('location:'.SITEURL.'admin/add-new-batch.php');
+        }
+        else
+        {
+            $_SESSION['succ']="<div class='error text-center'>Failed to add new batch.</div>";
+            header('location:'.SITEURL.'admin/add-new-batch.php');
+        }
     }
 ?>
