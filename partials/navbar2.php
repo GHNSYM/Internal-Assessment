@@ -1,5 +1,5 @@
-<?php include('./config/constants.php');?>
-
+<?php include('config/constants.php');?>
+<?php include('partials/login-check.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,15 +18,15 @@
     
     <div class="main">
         <div class="navbar">
-            <div class="watermark"><img src="images/logo.png"</a>
+            <div class="watermark"><img src="images/logo.png">
             </div>
 
             <div class="menu">
                 <ul>
-                    <li><a href="index.php">HOME</a></li>
-                    <li><a href="#">CONTACT</a></li>
-                    <li><a href="admin/login.php">ADMIN</a></li>
-                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="dashboard.php">DASHBOARD</a></li>
+                    <li><a href="resources.php">RESOURCES</a></li>
+                    <li><a href="index.php">LOGOUT</a></li>
+
                 </ul>
             </div>
             <!-- navbar section ends here -->

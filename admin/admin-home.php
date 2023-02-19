@@ -15,7 +15,7 @@ else
 
 ?>
 
-<div class="main">
+<div class="main cards">
 <?php
         if(isset($_SESSION['login']))
         {
@@ -58,15 +58,15 @@ else
           <div class="card card3">
             <h5>Result</h5>
             <div class="btn-tertiary">
-              <a href="">Add</a>
-              <a href="#">Add</a>
+              <a href="<?php echo SITEURL."admin/add-result.php"?>">Add</a>
+              <a href="<?php echo SITEURL."admin/view-result.php"?>">View</a>
             </div>
           </div>
             <div class="card card4">
               <h5>Others</h5>
               <div class="btn-tertiary">
-              <a href="#">Admin</a>
-              <a href="#">Promote</a>
+              <a href="<?php echo SITEURL."admin/manage-admin.php"?>">Admin</a>
+              <a href="<?php echo SITEURL."admin/promote.php"?>">Promote</a>
             </div>
             </div>
           </div>

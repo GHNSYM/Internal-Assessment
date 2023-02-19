@@ -52,10 +52,16 @@
 .main-login {
   background-image: url("../images/back.jpg");
   background-size: cover;
-  /* min-height: 80vh; */
   display: flex;
   justify-content: center;
 }
+.main-login .form{
+  margin:10% 5% 8.1% 5%;
+}
+
+/* .cards{
+  margin-top: 4%;
+} */
 .tbl-50 {
   width: 50%;
 }
@@ -351,9 +357,12 @@ ul li a:hover {
 }
 .success {
   color: green;
+  margin-left: 4%;
+  font-family: sans-serif;
 }
 .error {
   color: #ec2f4b;
+  font-family: sans-serif;
 }
 .container2 {
   margin-left: 240px;
@@ -464,7 +473,7 @@ legend {
 .add-batch input,
 select {
   padding: 4%;
-  margin: 0px 40px;
+  margin: 0px 24px;
   width: 130px;
   border: none;
 }
@@ -514,13 +523,58 @@ select {
   height: 37px;
 }
 
-/* .add-batch select{
+.promote-batch {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #0f035e;
+  align-items: center;
+}
+.promote-batch table{
+  width:60%;
+  margin-left:10%;
+  border-collapse: collapse;
+}
+.promote-batch table tr th,td{
+  text-align: center;
+}
+.promote-batch button{
+  border:none;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(
+    to bottom right,
+    rgb(255, 255, 255),
+    rgba(179, 179, 179, 0.7)
+  );
+  transition: all 0.3s ease 0s;
+  font-weight: bold;
+  
+}
+.promote-batch button:hover{
+  cursor: pointer;
+  background: linear-gradient(
+    to bottom right,
+    rgb(255, 255, 255),
+    rgba(116, 222, 248, 0.7)
+  );
+}
+
+
+  
+
+.promote-batch h3 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #0f035e;
+  margin: 0% 4%;
+}
+
+.add-batch select{
   padding:4%;
   margin:0px 40px;
-} */
-/* .add-batch table tr th{
- 
-} */
+}
 .text-white {
   color: white;
 }
@@ -714,4 +768,77 @@ select {
   background-color: rgb(250, 60, 60);
   color: white;
   transition: 0.2s ease-in-out;
+}
+.manage-admin{
+  margin: 0% 25%;
+}
+.manage-admin h1{
+  font-family: sans-serif;
+  padding-top: 4%;
+  color: rgb(5, 68, 119);
+  font-weight: bold;
+  font-size: 40px;
+  border-radius: 24px;
+}
+.manage-admin table{
+  border-collapse: collapse;
+  width:80%;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 100px;
+}
+.manage-admin td,th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+.manage-admin th{
+  background-color: #04aa6d;
+  color: white;
+  text-align: center;
+}
+.manage-admin tr{
+  background-color: rgb(218, 218, 218);
+
+}
+.manage-admin tr:nth-child(even) {
+  background-color: rgb(240, 240, 240);
+}
+.btn-danger {
+  background: linear-gradient(
+    to bottom right,
+    rgba(198, 78, 148, 0.7),
+    #e70d0d
+    );
+    display:inline-block;
+    margin-left: 3px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  border: none;
+  border-radius: 24px;
+  padding: 13px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.btn-danger:hover {
+  cursor: pointer;
+  background-color: rgb(109, 0, 0);
+  transition: 0.4s ease-in-out;
+}
+.add-admin{
+  width:40%;
+  margin:0% 30%;
+}
+.add-admin form{
+  text-align: center;
+}
+.add-admin h3{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: rgb(5, 68, 119);
+}
+.add-admin input{
+  padding:1.8%;
+  border-radius: 16px;
 }

@@ -10,6 +10,7 @@
                 <input type="submit" name="submit" value="Login">
             </div>
         </form>
+        <br>
         <?php
         if(isset($_SESSION['login']))
         {
