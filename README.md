@@ -14,7 +14,7 @@ The Internal Assessment System is a web-based application developed as part of m
 
 ## Technologies Used
 
-- **Frontend**: HTML, CSS, JavaScript
+- **Frontend**: HTML, CSS
 - **Backend**: PHP
 - **Database**: MySQL
 - **Authentication**: User authentication implemented for both students and faculty members
