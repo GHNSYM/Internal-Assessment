@@ -9,7 +9,6 @@ The Internal Assessment System is a web-based application developed as part of m
 ## Features
 
 - **Student Login**: Each student can securely log in to the system to view their internal assessment marks.
-- **Faculty Login**: Faculty members can log in and update the internal marks for each student.
 - **Admin Panel**: An admin panel for managing student and faculty accounts, as well as monitoring the system.
 - **Secure Access**: The system ensures that only authorized students can view their own marks.
 - **User-Friendly Interface**: A simple and intuitive UI to allow easy access to information for both students and faculty.
