@@ -18,7 +18,6 @@ The Internal Assessment System is a web-based application developed as part of m
 - **Backend**: PHP
 - **Database**: MySQL
 - **Authentication**: User authentication implemented for both students and faculty members
-- **Hosting**: The system is hosted on a local server for internal college use
 
 ## Installation & Setup
 
