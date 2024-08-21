@@ -2,6 +2,8 @@
 
 ## Project Overview
 
+![Screenshot of Internal Assessment System](assets/screenshot.png)
+
 The Internal Assessment System is a web-based application developed as part of my BCA final year project. This system aims to bridge the gap between students and their internal assessment scores by providing them easy access to their marks. In many educational institutions, students are often unaware of their internal marks until the end of the term, which leads to confusion and stress. Our system addresses this problem by providing students with a platform where they can check their internal assessment scores anytime during the semester.
 
 ## Features
