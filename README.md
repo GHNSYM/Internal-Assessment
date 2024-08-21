@@ -26,11 +26,11 @@ To set up the Internal Assessment System on your local machine:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/internal-assessment-system.git
+   git clone https://github.com/ghnsym/Internal-Assessment.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd internal-assessment-system
+   cd Internal-Assessment
    ```
 3. Set up the database:
    - Create a MySQL database for the project.
@@ -39,7 +39,7 @@ To set up the Internal Assessment System on your local machine:
 5. Start your local server (e.g., using XAMPP or WAMP) and host the project files.
 6. Open the project in your browser:
    ```bash
-   http://localhost/internal-assessment-system
+   http://localhost/Internal-Assessment
    ```
 
 ## Usage
@@ -48,12 +48,6 @@ To set up the Internal Assessment System on your local machine:
 2. **Faculty**: Log in using your faculty credentials to update and manage the internal marks of students.
 3. **Admin**: Log in to manage user accounts and monitor system performance.
 
-## Future Enhancements
-
-- Integration of automated email notifications for students when new marks are uploaded.
-- Mobile app version of the platform to provide notifications and easy access to marks.
-- Role-based access control for additional layers of security.
-- Performance analytics for students and faculty to track trends in assessment results.
 
 ## Contributing
 
